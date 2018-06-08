@@ -1,0 +1,17 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = slem1
+	email = sylvain.lem1@gmail.com
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = /usr/local/bin/kdiff3
+	trustExitCode = false
+[diff]
+	guitool = kdiff3
+[difftool]
+	prompt = false
+[difftool "kdiff3"]
+	path = /usr/local/bin/kdiff3
+	trustExitCode = false
