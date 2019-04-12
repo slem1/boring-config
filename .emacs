@@ -11,7 +11,7 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (require 'package)
- (toggle-debug-on-error)
+;; (toggle-debug-on-error)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
        (proto (if no-ssl "http" "https")))
@@ -83,6 +83,7 @@ There are two things you can do about this warning:
 ;;DISABLE WELCOME GNU BUFFER
 (setq inhibit-startup-screen t)
 
+
 ;;FIND FILE IN PROJECT
 (use-package find-file-in-project
   :ensure t
@@ -92,6 +93,12 @@ There are two things you can do about this warning:
   (setq ffip-project-root ".")
   )
 
+;;MULTIPLE CURSORS
+(use-package multiple-cursors
+  :ensure t
+  :init
+  )
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -99,7 +106,7 @@ There are two things you can do about this warning:
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (find-file-in-project neotree haskell-mode markdown-mode+ spaceline use-package spacemacs-theme))))
+    (multiple-cursors json-mode find-file-in-project neotree haskell-mode markdown-mode+ spaceline use-package spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -114,4 +121,4 @@ There are two things you can do about this warning:
 
 ;; RUN AT STARTUP...
 (toggle-frame-maximized)
-(neotree-show)
+;;(neotree-show)
